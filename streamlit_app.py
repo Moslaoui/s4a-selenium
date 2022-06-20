@@ -9,8 +9,8 @@ from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.firefox import GeckoDriverManager
+import os
 
-export GH_TOKEN = "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"
 
 
 URL = "https://www.unibet.fr/sport/football/europa-league/europa-league-matchs"
@@ -20,6 +20,7 @@ TIMEOUT = 20
 st.title("Test Selenium")
 st.markdown("You should see some random Football match text below in about 21 seconds")
 
+os.environ['GH_TOKEN'] = "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"
 firefoxOptions = Options()
 firefoxOptions.add_argument("--headless")
 service = Service(GeckoDriverManager().install())
